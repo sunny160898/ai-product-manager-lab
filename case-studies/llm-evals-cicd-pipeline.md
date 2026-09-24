@@ -15,3 +15,13 @@ graph TD
     E -->|Scoring Rubric: Groundedness, Correctness, Safety| F{Pass Threshold >= 95%?}
     F -->|Yes| G[Green Build: Auto-Merge / Deploy Enabled]
     F -->|No| H[Red Build: Block PR & Post Detailed Failure Report]
+
+```mermaid
+graph TD
+    A[Pull Request: Prompt or Code Change] -->|GitHub Actions Trigger| B[Test Runner Sandbox]
+    B -->|Fetch Test Suite| C[Golden Dataset JSON - 100 Plus Test Cases]
+    C -->|Concurrent API Calls| D[Target LLM Application Under Test]
+    D -->|Generated Outputs & Trace Logs| E[LLM-as-a-Judge Evaluator]
+    E -->|Scoring Rubric: Groundedness & Safety| F{Pass Threshold >= 95 Percent?}
+    F -->|Yes| G[Green Build: Auto-Merge Enabled]
+    F -->|No| H[Red Build: Block PR & Post Report]
