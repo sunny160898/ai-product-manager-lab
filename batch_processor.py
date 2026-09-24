@@ -1,12 +1,4 @@
-### 3. Core Python Implementation (`batch_processor.py`)
-
-```python
 import asyncio
-import logging
-import json
-from openai import AsyncOpenAI
-
-# (import asyncio
 import logging
 import json
 from openai import AsyncOpenAI
@@ -55,4 +47,4 @@ if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     batch_results = loop.run_until_complete(engine.run_batch(sample_prompts))
     
-    print(json.dumps(batch_results, indent=2)))
+    print(json.dumps(batch_results, indent=2))
