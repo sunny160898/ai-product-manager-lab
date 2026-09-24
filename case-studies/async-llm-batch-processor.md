@@ -12,7 +12,7 @@ flowchart TD
     B -->|Token Bucket Rate Limiter| C[Concurrent Async Workers]
     C -->|API Request with Exponential Backoff| D[LLM Provider API]
     D -->|Success Response| E[Structured JSON Output Store]
-    D -->|HTTP 429 Rate Limit Error| F[Automatic Retry & Jitter Backoff]
+    D -->|HTTP 429 Rate Limit Error| F[Automatic Retry and Jitter Backoff]
     F -->|Re-queue Task| C
 
 import asyncio
